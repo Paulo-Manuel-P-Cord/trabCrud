@@ -1,0 +1,25 @@
+body {
+    background-image: url('../imgs/fundoCadastro.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif; /* Fonte */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#formulario {
+    background-color: #6e9b77; /* Um tom de verde escuro para o fundo do formulário */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#formulario h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-cadastrar {
+    width: 100%;
+}
