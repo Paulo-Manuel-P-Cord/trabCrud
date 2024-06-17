@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php
-    session_start();
-    if (!isset($_SESSION['nome'])) {
-        header("Location: login/login.php");
-        exit;
-    }
-    ?>
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login/login.php");
+    exit;
+}
+?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Zoo Conpass</a>
@@ -31,6 +31,11 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#excluirContaModal">Excluir Conta</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="login/logout.php">Sair</a></li>
+                            <?php
+                            if ($_SESSION['cargo'] == 1){
+                                echo "<li><a class='dropdown-item' href='gerenciadores/admin.php'>Modo Admin</a></li>";
+                            }
+                            ?>
                         </ul>
                     </li>
                 </ul>

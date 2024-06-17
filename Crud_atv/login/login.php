@@ -8,27 +8,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<?php 
-    if (isset($_GET['success']) && $_GET['success'] === 'no') {
-        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <span id="mensagem-erro">Nome de usuário ou senha incorretos. Por favor, tente novamente.</span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
-        </div>';
-    }
-?>
+
 <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center min-vh-100">
         <div class="col-sm-9 col-md-7 col-lg-4">
             <div id="login-section" class="p-3 rounded shadow">
+            <?php 
+    if (isset($_GET['success']) && $_GET['success'] === 'no') {
+        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span id="mensagem-erro">Email ou senha incorretos. Por favor, tente novamente.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
+        </div>';
+    }
+?>
                 <div id="logo-section" class="d-flex align-items-center justify-content-center mb-3">
                     <img src="../imgs/logo.png" alt="Logo do Zoológico" class="img-fluid me-2" style="height: 100px;">
                     <h1 class="mb-0">Zoo Compass</h1>
                 </div>
-                <form method="POST" class="needs-validation " id="formulario" novalidate action="../verify/logar.php">
+                <form method="POST" class="needs-validation " novalidate  id="formulario"  action="../verify/logar.php">
                     <h2 class="text-center mb-4">Login</h2>
                     <div class="mb-3">
-                        <input class="form-control" id="nome" name="nome" type="text" placeholder="Nome de usuário" required>
-                        <div class="invalid-feedback">Por favor, insira seu nome de usuário.</div>
+                        <input class="form-control" id="nome" name="email" type="text" placeholder="Email" required>
+                        <div class="invalid-feedback">Por favor, insira seu Email.</div>
                     </div>
                     <div class="mb-3">
                         <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required>

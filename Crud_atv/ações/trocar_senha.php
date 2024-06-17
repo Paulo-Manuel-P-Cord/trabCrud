@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'database/conexao.php'; // Adiciona o arquivo de conexão com o banco de dados
+require '../database/conexao.php'; // Adiciona o arquivo de conexão com o banco de dados
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha_atual = $_POST['senha_atual'];
@@ -8,9 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmar_senha = $_POST['confirmar_senha'];
 
     if ($nova_senha !== $confirmar_senha) {
-        die('As novas senhas não coincidem.');
+        header("Location: ../gerenciadores/admin.php?success=senha");
     }
-
     $nome = $_SESSION['nome'];
     $sql = "SELECT senha FROM usuarios WHERE nome = ?";
     $stmt = $conn->prepare($sql);
@@ -27,10 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare($sql);
         $stmt->execute([$nova_senha, $nome]);
 
-        echo 'Senha alterada com sucesso.';
-        header("Location: index.php");
+        if($_SESSION['admin'] = true){
+            header("Location:../gerenciadores/admin.php");
+        }else{
+        header("Location: ../index.php");
+        }
     } else {
+        if($_SESSION['admin'] = true){
+            header('location: ../gerenciadores/admin.php?');
         die('Senha atual incorreta.');
     }
-}
+    }}
 ?>

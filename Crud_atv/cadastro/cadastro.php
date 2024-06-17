@@ -19,6 +19,26 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center min-vh-100">
             <div class="col-md-6">
+            <?php 
+    if (isset($_GET['error']) && $_GET['error'] === 'emailErro') {
+        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span id="mensagem-erro">Email Já está em uso. Por favor, tente novamente.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
+        </div>';
+    }
+    if (isset($_GET['error']) && $_GET['error'] === 'cellErro') {
+        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span id="mensagem-erro">Numero de Celular Já está em uso. Por favor, tente novamente.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
+        </div>';
+    }
+    if (isset($_GET['error']) && $_GET['error'] === 'cpfErro') {
+        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span id="mensagem-erro">CPF Já está em uso. Por favor, tente novamente.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
+        </div>';
+    }
+?>
                 <form method="POST" class="needs-validation" id="formulario" novalidate action="../verify/cadastro.php">
                     <h1>Cadastro de Usuário</h1>
                     <div class="row">
