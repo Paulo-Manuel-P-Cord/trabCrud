@@ -39,9 +39,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <a class="navbar-brand" href="admin.php">
                 <img src="../imgs/logo.png" alt="Logo do Zoológico" height="45"> Zoo Compass
             </a>
-            <button class="btn btn-primary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
-                Toggle Sidebar
-            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

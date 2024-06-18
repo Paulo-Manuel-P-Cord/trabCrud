@@ -198,3 +198,16 @@ require '../require/part1.php';
         color: #ffffff; /* Texto branco para contraste */
     }
 </style>
+<script>
+$(document).ready(function() {
+    // Validar formulário de editar animal
+    $('#editarAnimalModal form').submit(function(event) {
+        var form = $(this)[0];
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+});
+</script>

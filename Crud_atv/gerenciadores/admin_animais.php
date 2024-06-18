@@ -63,7 +63,7 @@
                 <i class="bi bi-chart-bar me-2"></i> Quantidade de animais por dieta
             </div>
             <div class="card-body bg-light-green">
-                <table class="table table-striped table-bordered">
+                <table class="table table-success table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Dieta</th>
