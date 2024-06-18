@@ -7,7 +7,7 @@ require '../require/part1.php';
     <h2 class="mb-4">Gerenciar Animais</h2>
     
     <!-- voltar -->
-    <a class="btn btn-danger mb-4" href="admin_animais.php">Voltar</a>
+    <a class="btn btn-primary mb-4" href="admin_animais.php">Voltar</a>
     <!-- Adicionar Animal -->
     <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#adicionarAnimalModal">Adicionar Animal</button>
 
@@ -183,26 +183,26 @@ require '../require/part1.php';
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
-<!-- Custom Styles -->
+
 <style>
     body {
-        background-color: #567d5f; /* Fundo Principal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f;
+        color: #ffffff;
     }
 
     .card-body.bg-secondary, .modal-body.bg-secondary, .modal-footer.bg-secondary, .table-bordered tbody.bg-secondary {
-        background-color: green; /* Fundo escuro para modais */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: green; 
+        color: #ffffff; 
     }
 
     .modal-header, .modal-content {
-        background-color: green; /* Fundo escuro para o cabeçalho do modal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: green; 
+        color: #ffffff; 
     }
 
     .card-header, .bg-primary, .table thead.bg-primary {
-        background-color: #445f48 ; /* Ajustando classes bg-primary */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #445f48 ; 
+        color: #ffffff;
     }
 
     .btn-danger {
@@ -210,7 +210,7 @@ require '../require/part1.php';
     }
 
     .btn-primary {
-        background-color: #445f48; /* Botões */
+        background-color: #445f48;
         border: none;
     }
 
@@ -231,21 +231,21 @@ require '../require/part1.php';
     }
 
     .table-hover tbody tr:hover {
-        background-color: #d9e9dd; /* Fundo verde mais claro ao passar o mouse */
+        background-color: #d9e9dd;
     }
 
     .form-label {
-        color: #000000; /* Títulos e rótulos em preto para melhor contraste */
+        color: #000000;
     }
 
     .modal-content {
-        background-color: #567d5f; /* Fundo Principal dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f; 
+        color: #ffffff; 
     }
 
     .modal-header, .modal-footer {
-        background-color: #445f48; /* Ajustando fundo do cabeçalho e rodapé dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #445f48;
+        color: #ffffff; 
     }
 </style>
 

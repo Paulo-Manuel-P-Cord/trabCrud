@@ -7,7 +7,7 @@ require '../require/part1.php';
     <h2 class="mb-4">Gerenciar Estoque</h2>
     
     <!-- voltar -->
-    <a class="btn btn-danger mb-4" href="admin_estoque.php">Voltar</a>
+    <a class="btn btn-primary mb-4" href="admin_estoque.php">Voltar</a>
     <!-- Adicionar Item -->
     <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#adicionarItemModal">Adicionar Item</button>
 
@@ -162,15 +162,15 @@ require '../require/part1.php';
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
-<!-- Custom Styles -->
+
 <style>
     body {
-        background-color: #567d5f; /* Fundo Principal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f; 
+        color: #ffffff; 
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; /* Fundo Verde Claro dos cartões */
+        background-color: #a8d5ba; 
     }
 
     .card-header {
@@ -178,7 +178,7 @@ require '../require/part1.php';
     }
 
     .btn-primary {
-        background-color: #445f48; /* Botões */
+        background-color: #445f48; 
         border: none;
     }
 
@@ -187,20 +187,20 @@ require '../require/part1.php';
     }
 
     .bg-primary {
-        background-color: #445f48 !important; /* Ajustando classes bg-primary */
+        background-color: #445f48 !important;
     }
     .modal-header, .modal-footer {
-        background-color: #445f48; /* Ajustando fundo do cabeçalho e rodapé dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #445f48; 
+        color: #ffffff; 
     }
     .modal-body{
-        background-color: #567d5f; /* Fundo Principal dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f; 
+        color: #ffffff;
     }
 </style>
 <script>
 $(document).ready(function() {
-    // Validar formulário de editar animal
+
     $('#editarAnimalModal form').submit(function(event) {
         var form = $(this)[0];
         if (!form.checkValidity()) {

@@ -1,7 +1,7 @@
 body {
     background-image: url('../imgs/fundoCadastro.jpg');
     background-size: cover;
-    font-family: Arial, sans-serif; /* Fonte */
+    font-family: Arial, sans-serif; 
 }
 
 .container {
@@ -9,10 +9,10 @@ body {
 }
 
 #formulario {
-    background-color: #6e9b77; /* Um tom de verde escuro para o fundo do formulário */
+    background-color: #6e9b77;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 #formulario h1 {

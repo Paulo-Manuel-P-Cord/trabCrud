@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
     try {
         $stmt->execute();
-        header("Location: ../gerenciadores/animais.php"); // Redirecionar de volta à página principal após editar
+        header("Location: ../gerenciadores/animais.php");
         exit();
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();

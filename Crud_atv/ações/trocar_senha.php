@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../database/conexao.php'; // Adiciona o arquivo de conexão com o banco de dados
+require '../database/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha_atual = $_POST['senha_atual'];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute([$nome]);
     $senha_db = $stmt->fetchColumn();
 
-    if ($senha_atual === $senha_db) { // Comparação simples de senhas em texto plano
+    if ($senha_atual === $senha_db) {
         $sql = "UPDATE usuarios SET senha = ? WHERE nome = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$nova_senha, $nome]);

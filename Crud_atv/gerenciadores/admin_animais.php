@@ -103,12 +103,12 @@
 <!-- Custom Styles -->
 <style>
     body {
-        background-color: #567d5f; /* Fundo Principal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f; 
+        color: #ffffff; 
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; /* Fundo Verde Claro dos cartões */
+        background-color: #a8d5ba; 
     }
 
     .card-header {
@@ -116,7 +116,7 @@
     }
 
     .btn-primary {
-        background-color: #445f48; /* Botões */
+        background-color: #445f48;
         border: none;
     }
 
@@ -125,6 +125,6 @@
     }
 
     .bg-primary {
-        background-color: #445f48 !important; /* Ajustando classes bg-primary */
+        background-color: #445f48 !important;
     }
 </style>

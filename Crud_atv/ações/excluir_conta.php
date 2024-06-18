@@ -1,10 +1,10 @@
 <?php
 session_start();
-require 'database/conexao.php'; // Adiciona o arquivo de conexão com o banco de dados
+require 'database/conexao.php'; 
 
 $nome = $_SESSION['nome'];
 $sql = "DELETE FROM usuarios WHERE nome = ?";
-$stmt = $conn->prepare($sql); // Usa a variável $conn do arquivo de conexão
+$stmt = $conn->prepare($sql);
 $stmt->execute([$nome]);
 
 session_destroy();

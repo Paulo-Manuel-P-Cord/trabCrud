@@ -49,7 +49,7 @@ require '../require/part1.php';
         ?>
     </div>
     <!-- Voltar -->
-    <a class="btn btn-danger mb-4" href="admin_funcionarios.php">Voltar</a>
+    <a class="btn btn-primary mb-4" href="admin_funcionarios.php">Voltar</a>
     <!-- Adicionar Funcionário -->
     <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#adicionarFuncionarioModal">Adicionar Funcionário</button>
 
