@@ -5,7 +5,7 @@ require '../require/part1.php';
 
 <div class="container mt-5">
     <h2 class="mb-4">Gerenciar Estoque</h2>
-    
+
     <!-- voltar -->
     <a class="btn btn-primary mb-4" href="admin_estoque.php">Voltar</a>
     <!-- Adicionar Item -->
@@ -20,7 +20,6 @@ require '../require/part1.php';
                     <th>Nome do Item</th>
                     <th>Categoria</th>
                     <th>Quantidade</th>
-                    
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -66,13 +65,13 @@ require '../require/part1.php';
                                             <div class='mb-3'>
                                                 <label for='categoria' class='form-label'>Categoria</label>
                                                 <select class='form-control' id='categoria' name='categoria' required>";
-                                                
-                                                $sql_categoria = "SELECT * FROM categoria_estoque";
-                                                $stmt_categoria = $conn->query($sql_categoria);
-                                                while ($categoria = $stmt_categoria->fetch(PDO::FETCH_ASSOC)) {
-                                                    $selected = ($categoria['id'] == $row['categoria']) ? 'selected' : '';
-                                                    echo "<option value='{$categoria['id']}' $selected>{$categoria['nome_categoria']}</option>";
-                                                }
+
+                    $sql_categoria = "SELECT * FROM categoria_estoque";
+                    $stmt_categoria = $conn->query($sql_categoria);
+                    while ($categoria = $stmt_categoria->fetch(PDO::FETCH_ASSOC)) {
+                        $selected = ($categoria['id'] == $row['categoria']) ? 'selected' : '';
+                        echo "<option value='{$categoria['id']}' $selected>{$categoria['nome_categoria']}</option>";
+                    }
 
                     echo "                      </select>
                                             </div>
@@ -122,7 +121,7 @@ require '../require/part1.php';
                 <h5 class="modal-title" id="adicionarItemModalLabel">Adicionar Item</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="../ações/adicionar_item.php" method="POST" class="needs-validation" >
+            <form action="../ações/adicionar_item.php" method="POST" class="needs-validation">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nome_item" class="form-label">Nome do Item</label>
@@ -165,12 +164,12 @@ require '../require/part1.php';
 
 <style>
     body {
-        background-color: #567d5f; 
-        color: #ffffff; 
+        background-color: #567d5f;
+        color: #ffffff;
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; 
+        background-color: #a8d5ba;
     }
 
     .card-header {
@@ -178,7 +177,7 @@ require '../require/part1.php';
     }
 
     .btn-primary {
-        background-color: #445f48; 
+        background-color: #445f48;
         border: none;
     }
 
@@ -189,25 +188,28 @@ require '../require/part1.php';
     .bg-primary {
         background-color: #445f48 !important;
     }
-    .modal-header, .modal-footer {
-        background-color: #445f48; 
-        color: #ffffff; 
+
+    .modal-header,
+    .modal-footer {
+        background-color: #445f48;
+        color: #ffffff;
     }
-    .modal-body{
-        background-color: #567d5f; 
+
+    .modal-body {
+        background-color: #567d5f;
         color: #ffffff;
     }
 </style>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    $('#editarAnimalModal form').submit(function(event) {
-        var form = $(this)[0];
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-        form.classList.add('was-validated');
+        $('#editarAnimalModal form').submit(function(event) {
+            var form = $(this)[0];
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
     });
-});
 </script>

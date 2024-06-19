@@ -6,7 +6,7 @@ require '../require/part1.php';
 <div class="container ">
     <div class="d-flex">
         <h2 class="mb-4">Gerenciar Funcionários</h2>
-        <?php 
+        <?php
         // alerta funcionario adicionar
         if (isset($_GET['sucesso']) && $_GET['sucesso'] === 'S') {
             echo '<div id="alerta-erro" class="alert alert-success alert-dismissible fade show col-lg-4" style="margin-left: 10px;" role="alert">
@@ -194,23 +194,37 @@ require '../require/part1.php';
 <!-- Custom Styles -->
 <style>
     body {
-        background-color: #567d5f; /* Fundo Principal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f;
+        /* Fundo Principal */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
 
-    .card-body.bg-secondary, .modal-body.bg-secondary, .modal-footer.bg-secondary, .table-bordered tbody.bg-secondary {
-        background-color: green; /* Fundo escuro para modais */
-        color: #ffffff; /* Texto branco para contraste */
+    .card-body.bg-secondary,
+    .modal-body.bg-secondary,
+    .modal-footer.bg-secondary,
+    .table-bordered tbody.bg-secondary {
+        background-color: green;
+        /* Fundo escuro para modais */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
 
-    .modal-header, .modal-content {
-        background-color: green; /* Fundo escuro para o cabeçalho do modal */
-        color: #ffffff; /* Texto branco para contraste */
+    .modal-header,
+    .modal-content {
+        background-color: green;
+        /* Fundo escuro para o cabeçalho do modal */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
 
-    .card-header, .bg-primary, .table thead.bg-primary {
-        background-color: #445f48 ; /* Ajustando classes bg-primary */
-        color: #ffffff; /* Texto branco para contraste */
+    .card-header,
+    .bg-primary,
+    .table thead.bg-primary {
+        background-color: #445f48;
+        /* Ajustando classes bg-primary */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
 
     .btn-danger {
@@ -218,7 +232,8 @@ require '../require/part1.php';
     }
 
     .btn-primary {
-        background-color: #445f48; /* Botões */
+        background-color: #445f48;
+        /* Botões */
         border: none;
     }
 
@@ -226,7 +241,8 @@ require '../require/part1.php';
         background-color: #567d5f;
     }
 
-    .btn-success, .btn-danger {
+    .btn-success,
+    .btn-danger {
         border: none;
     }
 
@@ -239,38 +255,45 @@ require '../require/part1.php';
     }
 
     .table-hover tbody tr:hover {
-        background-color: #d9e9dd; /* Fundo verde mais claro ao passar o mouse */
+        background-color: #d9e9dd;
+        /* Fundo verde mais claro ao passar o mouse */
     }
 
     .form-label {
-        color: #000000; /* Títulos e rótulos em preto para melhor contraste */
+        color: #000000;
+        /* Títulos e rótulos em preto para melhor contraste */
     }
 
 
-    .modal-header, .modal-footer  {
-        background-color: #445f48; /* Ajustando fundo do cabeçalho e rodapé dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+    .modal-header,
+    .modal-footer {
+        background-color: #445f48;
+        /* Ajustando fundo do cabeçalho e rodapé dos modais */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
-    .modal-body{
-        background-color: #567d5f; /* Fundo Principal dos modais */
-        color: #ffffff; /* Texto branco para contraste */
+
+    .modal-body {
+        background-color: #567d5f;
+        /* Fundo Principal dos modais */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
-    
 </style>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var forms = document.querySelectorAll('.needs-validation');
+    document.addEventListener('DOMContentLoaded', function() {
+        var forms = document.querySelectorAll('.needs-validation');
 
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
-                form.classList.add('was-validated');
-            }, false);
-        });
-});
+                    form.classList.add('was-validated');
+                }, false);
+            });
+    });
 </script>

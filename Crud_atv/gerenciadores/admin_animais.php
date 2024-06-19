@@ -6,7 +6,7 @@
         <div class="col-md-4 mb-4">
             <div class="card text-center shadow-sm" style="height: 100%;">
                 <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
-                <i class="fas fa-paw">&#xf1b0;</i> Gerencie os animais
+                    <i class="fas fa-paw">&#xf1b0;</i> Gerencie os animais
                 </div>
                 <div class="card-body bg-light-green">
                     <p style='font-size: 20px;' class="card-text">Aqui você pode adicionar, editar e deletar os animais</p>
@@ -55,44 +55,44 @@
             </div>
         </div>
     </div>
-        <!-- Tabela de quantidade de animais por dieta -->
-<div class="row">
-    <div class="col-md-12 mb-4">
-        <div class="card text-center shadow-sm" style="height: 100%;">
-            <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
-                <i class="bi bi-chart-bar me-2"></i> Quantidade de animais por dieta
-            </div>
-            <div class="card-body bg-light-green">
-                <table class="table table-success table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Dieta</th>
-                            <th>Quantidade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $sql = "SELECT ta.dieta, COUNT(a.id) AS quantidade FROM animais a JOIN tipoanimal ta ON a.Dieta = ta.id GROUP BY ta.dieta ORDER BY quantidade DESC";
-                        $result = $conn->query($sql);
+    <!-- Tabela de quantidade de animais por dieta -->
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="card text-center shadow-sm" style="height: 100%;">
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="bi bi-chart-bar me-2"></i> Quantidade de animais por dieta
+                </div>
+                <div class="card-body bg-light-green">
+                    <table class="table table-success table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Dieta</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "SELECT ta.dieta, COUNT(a.id) AS quantidade FROM animais a JOIN tipoanimal ta ON a.Dieta = ta.id GROUP BY ta.dieta ORDER BY quantidade DESC";
+                            $result = $conn->query($sql);
 
-                        if ($result->rowCount() > 0) {
-                            while ($row = $result->fetch()) {
-                                echo "<tr>";
-                                echo "<td>" . $row["dieta"] . "</td>";
-                                echo "<td>" . $row["quantidade"] . "</td>";
-                                echo "</tr>";
+                            if ($result->rowCount() > 0) {
+                                while ($row = $result->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row["dieta"] . "</td>";
+                                    echo "<td>" . $row["quantidade"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td>-</td><td>0</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td>-</td><td>0</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
-    </div>
 
 
 <?php require '../require/part2.php'; ?>
@@ -103,12 +103,12 @@
 <!-- Custom Styles -->
 <style>
     body {
-        background-color: #567d5f; 
-        color: #ffffff; 
+        background-color: #567d5f;
+        color: #ffffff;
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; 
+        background-color: #a8d5ba;
     }
 
     .card-header {

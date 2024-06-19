@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -15,30 +16,31 @@
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center min-vh-100">
             <div class="col-md-6">
-            <?php 
-    if (isset($_GET['error']) && $_GET['error'] === 'emailErro') {
-        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php
+                if (isset($_GET['error']) && $_GET['error'] === 'emailErro') {
+                    echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
             <span id="mensagem-erro">Email Já está em uso. Por favor, tente novamente.</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
         </div>';
-    }
-    if (isset($_GET['error']) && $_GET['error'] === 'cellErro') {
-        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+                }
+                if (isset($_GET['error']) && $_GET['error'] === 'cellErro') {
+                    echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
             <span id="mensagem-erro">Numero de Celular Já está em uso. Por favor, tente novamente.</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
         </div>';
-    }
-    if (isset($_GET['error']) && $_GET['error'] === 'cpfErro') {
-        echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
+                }
+                if (isset($_GET['error']) && $_GET['error'] === 'cpfErro') {
+                    echo '<div id="alerta-erro" class="alert alert-danger alert-dismissible fade show" role="alert">
             <span id="mensagem-erro">CPF Já está em uso. Por favor, tente novamente.</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="fecharAlerta(\'alerta-erro\')"></button>
         </div>';
-    }
-?>
+                }
+                ?>
                 <form method="POST" class="needs-validation" id="formulario" novalidate action="../verify/cadastro.php">
                     <h1>Cadastro de Usuário</h1>
                     <div class="row">
@@ -89,15 +91,16 @@
                     </div>
                     <input type="submit" name="submit" class="btn btn-primary btn-cadastrar">
                     <p class="text-center mt-3 mb-0">Já tem uma conta? <a href="../login/login.php" class="link-cadastro">Faça login aqui</a></p>
-</form>
-</div>
-</div>
-</div>
-</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- JavaScript para validação -->
-<script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript para validação -->
+    <script src="script.js"></script>
 </body>
+
 </html>

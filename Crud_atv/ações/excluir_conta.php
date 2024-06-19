@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'database/conexao.php'; 
+require 'database/conexao.php';
 
 $nome = $_SESSION['nome'];
 $sql = "DELETE FROM usuarios WHERE nome = ?";
@@ -12,4 +12,3 @@ session_destroy();
 echo 'Conta excluída com sucesso.';
 header("Location: login/login.php");
 exit;
-?>

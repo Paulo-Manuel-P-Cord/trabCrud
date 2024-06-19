@@ -5,7 +5,7 @@ require '../require/part1.php';
 
 <div class="container mt-5 text-white">
     <h2 class="mb-4">Gerenciar Animais</h2>
-    
+
     <!-- voltar -->
     <a class="btn btn-primary mb-4" href="admin_animais.php">Voltar</a>
     <!-- Adicionar Animal -->
@@ -63,13 +63,13 @@ require '../require/part1.php';
                                             <div class='mb-3'>
                                                 <label for='dieta' class='form-label'>Dieta</label>
                                                 <select class='form-control' id='dieta' name='dieta' required>";
-                                                
-                                                $sql_dieta = "SELECT * FROM tipoanimal";
-                                                $stmt_dieta = $conn->query($sql_dieta);
-                                                while ($dieta = $stmt_dieta->fetch(PDO::FETCH_ASSOC)) {
-                                                    $selected = ($dieta['id'] == $row['Dieta']) ? 'selected' : '';
-                                                    echo "<option value='{$dieta['id']}' $selected>{$dieta['dieta']}</option>";
-                                                }
+
+                    $sql_dieta = "SELECT * FROM tipoanimal";
+                    $stmt_dieta = $conn->query($sql_dieta);
+                    while ($dieta = $stmt_dieta->fetch(PDO::FETCH_ASSOC)) {
+                        $selected = ($dieta['id'] == $row['Dieta']) ? 'selected' : '';
+                        echo "<option value='{$dieta['id']}' $selected>{$dieta['dieta']}</option>";
+                    }
 
                     echo "                      </select>
                                             </div>
@@ -190,18 +190,24 @@ require '../require/part1.php';
         color: #ffffff;
     }
 
-    .card-body.bg-secondary, .modal-body.bg-secondary, .modal-footer.bg-secondary, .table-bordered tbody.bg-secondary {
-        background-color: green; 
-        color: #ffffff; 
+    .card-body.bg-secondary,
+    .modal-body.bg-secondary,
+    .modal-footer.bg-secondary,
+    .table-bordered tbody.bg-secondary {
+        background-color: green;
+        color: #ffffff;
     }
 
-    .modal-header, .modal-content {
-        background-color: green; 
-        color: #ffffff; 
+    .modal-header,
+    .modal-content {
+        background-color: green;
+        color: #ffffff;
     }
 
-    .card-header, .bg-primary, .table thead.bg-primary {
-        background-color: #445f48 ; 
+    .card-header,
+    .bg-primary,
+    .table thead.bg-primary {
+        background-color: #445f48;
         color: #ffffff;
     }
 
@@ -218,7 +224,8 @@ require '../require/part1.php';
         background-color: #567d5f;
     }
 
-    .btn-success, .btn-danger {
+    .btn-success,
+    .btn-danger {
         border: none;
     }
 
@@ -239,30 +246,31 @@ require '../require/part1.php';
     }
 
     .modal-content {
-        background-color: #567d5f; 
-        color: #ffffff; 
+        background-color: #567d5f;
+        color: #ffffff;
     }
 
-    .modal-header, .modal-footer {
+    .modal-header,
+    .modal-footer {
         background-color: #445f48;
-        color: #ffffff; 
+        color: #ffffff;
     }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var forms = document.querySelectorAll('.needs-validation');
+    document.addEventListener('DOMContentLoaded', function() {
+        var forms = document.querySelectorAll('.needs-validation');
 
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
-                form.classList.add('was-validated');
-            }, false);
-        });
-});
+                    form.classList.add('was-validated');
+                }, false);
+            });
+    });
 </script>

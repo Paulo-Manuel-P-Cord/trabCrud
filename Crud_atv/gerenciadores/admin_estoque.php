@@ -56,41 +56,41 @@
         </div>
     </div>
     <div class="row">
-    <div class="col-md-12 mb-4">
-        <div class="card text-center shadow-sm" style="height: 100%;">
-            <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
-                <i class="bi bi-chart-bar me-2"></i> Quantidade de animais por dieta
-            </div>
-            <div class="card-body bg-light-green">
-            <table class="table table-success table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Categoria</th>
-            <th>Quantidade de Itens</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        $sql = "SELECT ce.nome_categoria, COUNT(a.nome_item) AS quantidade FROM armazem a JOIN categoria_estoque ce ON a.categoria = ce.id GROUP BY ce.nome_categoria DESC";
-        $result = $conn->query($sql);
+        <div class="col-md-12 mb-4">
+            <div class="card text-center shadow-sm" style="height: 100%;">
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="bi bi-chart-bar me-2"></i> Quantidade de animais por dieta
+                </div>
+                <div class="card-body bg-light-green">
+                    <table class="table table-success table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Quantidade de Itens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "SELECT ce.nome_categoria, COUNT(a.nome_item) AS quantidade FROM armazem a JOIN categoria_estoque ce ON a.categoria = ce.id GROUP BY ce.nome_categoria DESC";
+                            $result = $conn->query($sql);
 
-        if ($result->rowCount() > 0) {
-            while ($row = $result->fetch()) {
-                echo "<tr>";
-                echo "<td>" . $row["nome_categoria"] . "</td>";
-                echo "<td>" . $row["quantidade"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td>-</td><td>0</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
+                            if ($result->rowCount() > 0) {
+                                while ($row = $result->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row["nome_categoria"] . "</td>";
+                                    echo "<td>" . $row["quantidade"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td>-</td><td>0</td></tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php require '../require/part2.php'; ?>
@@ -101,12 +101,15 @@
 <!-- Custom Styles -->
 <style>
     body {
-        background-color: #567d5f; /* Fundo Principal */
-        color: #ffffff; /* Texto branco para contraste */
+        background-color: #567d5f;
+        /* Fundo Principal */
+        color: #ffffff;
+        /* Texto branco para contraste */
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; /* Fundo Verde Claro dos cartões */
+        background-color: #a8d5ba;
+        /* Fundo Verde Claro dos cartões */
     }
 
     .card-header {
@@ -114,7 +117,8 @@
     }
 
     .btn-primary {
-        background-color: #445f48; /* Botões */
+        background-color: #445f48;
+        /* Botões */
         border: none;
     }
 
@@ -123,8 +127,7 @@
     }
 
     .bg-primary {
-        background-color: #445f48 !important; /* Ajustando classes bg-primary */
+        background-color: #445f48 !important;
+        /* Ajustando classes bg-primary */
     }
 </style>
-
-

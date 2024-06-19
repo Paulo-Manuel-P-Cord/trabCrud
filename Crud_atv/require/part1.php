@@ -44,6 +44,16 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admin_animais.php">Gerenciar Animais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin_estoque.php">Gerenciar Estoque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin_funcionarios.php">Gerenciar Funcionários</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo ($_SESSION['nome']); ?>
@@ -52,7 +62,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <li><a class="dropdown-item drophover" href="#" data-bs-toggle="modal" data-bs-target="#informacaoModal">Conta</a></li>
                             <li><a class="dropdown-item drophover" href="#" data-bs-toggle="modal" data-bs-target="#trocarSenhaModal">Trocar Senha</a></li>
                             <li><a class="dropdown-item drophover" href="#" data-bs-toggle="modal" data-bs-target="#excluirContaModal">Excluir Conta</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item drophover" href="../login/logout.php">Sair</a></li>
                             <li><a class="dropdown-item drophover" href="../index.php">Modo Usuário</a></li>
                         </ul>
@@ -62,23 +74,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </nav>
 
-    <div class="sidebar d-md-block collapse" id="sidebar" style="padding-top: 20px;">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="admin_animais.php">Gerenciar Animais</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="admin_estoque.php">Gerenciar Estoque</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="admin_funcionarios.php">Gerenciar Funcionários</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="main-content">
+    <div class="main-content" style="left: 0;">
         <div class="d-flex justify-content-center pt-4">
-            <?php 
+            <?php
             if (isset($_GET['success']) && $_GET['success'] === 'senha') {
                 echo '<div style="font-size: 18px" id="alerta-erro" class="alert alert-danger alert-dismissible fade show col-sm-9 col-md-7 col-lg-3 text-center" role="alert">
                     <span id="mensagem-erro">Tenha certeza de colocar a senha correta</span>
@@ -88,16 +86,22 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             ?>
         </div>
 
-    <style>
-        .modal-header, .modal-footer {
-            background-color: #445f48; /* Ajustando fundo do cabeçalho e rodapé dos modais */
-            color: #ffffff; /* Texto branco para contraste */
-        }
-        .modal-body {
-            background-color: #567d5f; /* Fundo Principal dos modais */
-            color: #ffffff; /* Texto branco para contraste */
-        }
-    </style>
+        <style>
+            .modal-header,
+            .modal-footer {
+                background-color: #445f48;
+                /* Ajustando fundo do cabeçalho e rodapé dos modais */
+                color: #ffffff;
+                /* Texto branco para contraste */
+            }
+
+            .modal-body {
+                background-color: #567d5f;
+                /* Fundo Principal dos modais */
+                color: #ffffff;
+                /* Texto branco para contraste */
+            }
+        </style>
 </body>
 
 </html>

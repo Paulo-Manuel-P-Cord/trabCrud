@@ -1,7 +1,7 @@
 <?php require '../require/part1.php'; ?>
 
 <div class="container mt-5">
-    <?php if (isset($_GET['status']) && isset($_GET['message'])): ?>
+    <?php if (isset($_GET['status']) && isset($_GET['message'])) : ?>
         <div class="alert alert-<?php echo ($_GET['status'] == 'success') ? 'success' : 'danger'; ?> alert-dismissible fade show" role="alert">
             <?php echo htmlspecialchars($_GET['message']); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col-md-4 mb-4">
             <div class="card text-center shadow-sm" style="height: 100%;">
                 <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
@@ -77,6 +77,6 @@
     }
 
     .bg-primary {
-        background-color: #445f48 !important; 
+        background-color: #445f48 !important;
     }
 </style>

@@ -20,10 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $stmt->execute();
-        header("Location: ../gerenciadores/animais.php"); 
+        header("Location: ../gerenciadores/animais.php");
         exit();
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
 }
-?>

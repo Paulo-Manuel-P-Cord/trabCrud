@@ -12,7 +12,7 @@
                     <p style='font-size: 20px;' class="card-text">Aqui você pode adicionar, editar e deletar os funcionários</p>
                     <a href="funcionarios.php" class="btn btn-primary">Abrir</a>
                 </div>
-                </div>
+            </div>
         </div>
         <div class="col-md-6 mb-4">
             <div class="card text-center shadow-sm" style="height: 100%;">
@@ -32,7 +32,7 @@
                     }
                     ?>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
     }
 
     .card-body.bg-light-green {
-        background-color: #a8d5ba; 
+        background-color: #a8d5ba;
     }
 
     .card-header {
@@ -58,7 +58,7 @@
     }
 
     .btn-primary {
-        background-color: #445f48; 
+        background-color: #445f48;
         border: none;
     }
 
